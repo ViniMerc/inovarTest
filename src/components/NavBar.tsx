@@ -9,11 +9,14 @@ import {
 import { Hexagon } from "react-feather";
 import { colors } from "../themes/colors";
 import Search from "./Search";
+import FilterButton from "./FilterButton";
 
 export default function NavBar() {
   return (
     <AppBar
       sx={{
+        height: 90,
+        mt: 4,
         boxShadow: "0px 0.2px 0px 0px #000000",
         backgroundColor: "transparent",
         position: "static",
@@ -28,15 +31,15 @@ export default function NavBar() {
         }}
       >
         <Stack direction="row" spacing={2}>
-          <Hexagon size={48} fill={colors.primary} color={colors.primary} style={{ marginLeft: "300px" }} />
-          <Button
-            sx={{
-              backgroundColor: colors.tertiary,
-              color: "#545454",
-            }}
-          >
-            =
-          </Button>
+          <Hexagon
+            size={48}
+            fill={colors.primary}
+            color={colors.primary}
+            style={{ marginLeft: "300px" }}
+          />
+
+          <FilterButton />
+
           <Search />
         </Stack>
         <Stack direction="row" spacing={2}>
