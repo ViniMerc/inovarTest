@@ -71,9 +71,9 @@ const PostList: React.FC = () => {
           key={index}
           sx={{
             maxWidth: "80%",
-            marginBottom: "5px",
+            marginBottom: "2px",
             minWidth: 900,
-            mt: "5px",
+            mt: "2px",
             boxShadow: "none",
           }}
         >
@@ -94,7 +94,7 @@ const PostList: React.FC = () => {
             >
               {item.meta.url}
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography variant="h5" component="div" sx={{ mt: 0.4, mb: 0.4 }}>
               {item.meta.title}
             </Typography>
             <Grid container direction="row" spacing={2}>
