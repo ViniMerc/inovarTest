@@ -28,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preinstall": "npm i @mui/styled-engine-sc@next @mui/styled-engine@next @mui/material@next @emotion/react @emotion/styled"
   },
   "eslintConfig": {
     "extends": [
