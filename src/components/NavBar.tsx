@@ -1,5 +1,7 @@
-import { AppBar, Avatar, Button, Input, Stack, Toolbar } from "@mui/material";
+import { AppBar, Avatar, Button, Stack, Toolbar } from "@mui/material";
 import { Hexagon } from "react-feather";
+import { colors } from "../themes/colors";
+import Search from "./Search";
 
 export default function NavBar() {
   return (
@@ -20,11 +22,26 @@ export default function NavBar() {
       >
         <Stack direction="row" spacing={2}>
           <Hexagon size={24} color="orange" style={{ marginLeft: "300px" }} />
-          <Button sx={{ backgroundColor: "red" }}></Button>
-          <Input></Input>
+          <Button
+            sx={{
+              backgroundColor: colors.tertiary,
+              color: "#545454",
+            }}
+          >
+            =
+          </Button>
+          <Search />
         </Stack>
         <Stack direction="row" spacing={2}>
-          <Button sx={{ backgroundColor: "red", marginRight:"300px" }}>+ Add Post</Button>
+          <Button
+            sx={{
+              backgroundColor: colors.primary,
+              marginRight: "300px",
+              color: colors.tertiary,
+            }}
+          >
+            + Add Post
+          </Button>
           <Stack direction="row" spacing={2}>
             <Avatar
               alt="Remy Sharp"
