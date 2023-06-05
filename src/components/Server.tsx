@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Container, Typography } from "@mui/material";
 
 const CardList: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -18,9 +18,9 @@ const CardList: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       {data.map((item, index) => (
-        <Card key={index} sx={{ maxWidth: 345, marginBottom: "10px" }}>
+        <Card key={index} sx={{ maxWidth: "80%", marginBottom: "20px",mt:"20px" }}>
           <CardContent>
             <Typography variant="h5" component="div">
               {item.meta.title}
@@ -40,7 +40,7 @@ const CardList: React.FC = () => {
           </CardContent>
         </Card>
       ))}
-    </div>
+    </Container>
   );
 };
 
