@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, CardContent, Container, Input, Typography } from "@mui/material";
+import {
+  Avatar,
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Input,
+  Link,
+  Typography,
+} from "@mui/material";
 import { colors } from "../themes/colors";
 
 const PostList: React.FC = () => {
@@ -31,7 +40,6 @@ const PostList: React.FC = () => {
   }, [data, searchTerm]);
 
   return (
-    
     <Container
       sx={{
         alignContent: "center",
@@ -43,18 +51,14 @@ const PostList: React.FC = () => {
         marginBottom: "20px",
         borderRadius: "10px",
       }}
-    >    
-    
-    
-    <Input
-    sx={{ backgroundColor: colors.secondary, borderRadius: 1 
-    }}
-    placeholder="&#128269;"
-    type="text"
-    value={searchTerm}
-    onChange={handleSearchChange}
-  ></Input>
-
+    >
+      <Input
+        sx={{ backgroundColor: colors.secondary, borderRadius: 1 }}
+        placeholder="&#128269;"
+        type="text"
+        value={searchTerm}
+        onChange={handleSearchChange}
+      ></Input>
 
       {filteredData.map((item, index) => (
         <Card
@@ -68,21 +72,55 @@ const PostList: React.FC = () => {
           }}
         >
           <CardContent>
+            <Typography variant="h4" color="#000000">
+              {item.upvotes}
+            </Typography>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              textTransform={"uppercase"}
+            >
+              {item.meta.url}
+            </Typography>
             <Typography variant="h5" component="div">
               {item.meta.title}
             </Typography>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-              Author: {item.meta.author}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Category: {item.category}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Comments: {item.comments}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Upvotes: {item.upvotes}
-            </Typography>
+            <Grid container direction="row" spacing={2}>
+              <Grid item xs={"auto"}>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    backgroundColor: "#09BAFB",
+                    borderRadius: 2,
+                    padding: "5px",
+                  }}
+                >
+                  {item.category}
+                </Typography>
+              </Grid>
+              <Grid item xs={"auto"}>
+                <Avatar
+                  variant="rounded"
+                  src="https://material-ui.com/static/images/avatar/1.jpg"
+                />
+              </Grid>
+              <Grid item xs={"auto"}>
+                <Typography color="text.secondary">
+                  <Link>{item.meta.author}</Link>
+                </Typography>
+              </Grid>
+              <Grid item xs={"auto"}>
+                <Typography variant="body2" color="text.secondary">
+                  Comments: {item.comments}
+                </Typography>
+              </Grid>
+              <Grid item xs={"auto"}>
+                <Typography variant="body2" color="text.secondary">
+                  <Link>Edit </Link>
+                </Typography>
+              </Grid>
+            </Grid>
           </CardContent>
         </Card>
       ))}

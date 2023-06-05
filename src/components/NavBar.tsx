@@ -1,7 +1,6 @@
 import {
   AppBar,
   Avatar,
-  Button,
   Container,
   Stack,
   Toolbar,
@@ -10,6 +9,7 @@ import { Hexagon } from "react-feather";
 import { colors } from "../themes/colors";
 import Search from "./Search";
 import FilterButton from "./FilterButton";
+import AddPostButton from "./AddPostButton";
 
 export default function NavBar() {
   return (
@@ -43,14 +43,7 @@ export default function NavBar() {
           <Search />
         </Stack>
         <Stack direction="row" spacing={2}>
-          <Button
-            sx={{
-              backgroundColor: colors.primary,
-              color: colors.tertiary,
-            }}
-          >
-            + Add Post
-          </Button>
+        <AddPostButton/>
           <Stack direction="row" spacing={2}>
             <Container sx={{ marginRight: "300px" }}>
               <Avatar
