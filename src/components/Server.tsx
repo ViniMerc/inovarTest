@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Avatar,
+  Button,
+  ButtonGroup,
   Card,
   CardContent,
   Container,
@@ -18,6 +20,10 @@ const PostList: React.FC = () => {
   const [filteredData, setFilteredData] = useState<any[]>([]);
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
+  };
+  const formatCreatedAt = (timestamp: number) => {
+    const date = new Date(timestamp * 1000); // Multiplica por 1000 para converter para milissegundos
+    return date.toLocaleDateString(); // Formata a data para uma string legível
   };
 
   useEffect(() => {
@@ -72,9 +78,15 @@ const PostList: React.FC = () => {
           }}
         >
           <CardContent>
-            <Typography variant="h4" color="#000000">
-              {item.upvotes}
-            </Typography>
+            <ButtonGroup variant="contained">
+              <Button
+                sx={{ backgroundColor: colors.primary, color: colors.tertiary }}
+              >
+                {" "}
+                {item.upvotes}
+              </Button>
+            </ButtonGroup>
+
             <Typography
               variant="body2"
               color="text.secondary"
@@ -111,8 +123,13 @@ const PostList: React.FC = () => {
                 </Typography>
               </Grid>
               <Grid item xs={"auto"}>
+                <Typography color="text.secondary">
+                  {formatCreatedAt(item.created_at)} •
+                </Typography>
+              </Grid>
+              <Grid item xs={"auto"}>
                 <Typography variant="body2" color="text.secondary">
-                  Comments: {item.comments}
+                  <Link>{item.comments} Comments</Link>
                 </Typography>
               </Grid>
               <Grid item xs={"auto"}>
