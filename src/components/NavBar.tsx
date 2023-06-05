@@ -1,4 +1,11 @@
-import { AppBar, Avatar, Button, Stack, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Avatar,
+  Button,
+  Container,
+  Stack,
+  Toolbar,
+} from "@mui/material";
 import { Hexagon } from "react-feather";
 import { colors } from "../themes/colors";
 import Search from "./Search";
@@ -36,17 +43,18 @@ export default function NavBar() {
           <Button
             sx={{
               backgroundColor: colors.primary,
-              marginRight: "300px",
               color: colors.tertiary,
             }}
           >
             + Add Post
           </Button>
           <Stack direction="row" spacing={2}>
-            <Avatar
-              alt="Remy Sharp"
-              src="https://material-ui.com/static/images/avatar/1.jpg"
-            />
+            <Container sx={{ marginRight: "300px" }}>
+              <Avatar
+                variant="rounded"
+                src="https://material-ui.com/static/images/avatar/1.jpg"
+              />
+            </Container>
           </Stack>
         </Stack>
       </Toolbar>
