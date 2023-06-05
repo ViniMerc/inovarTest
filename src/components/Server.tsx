@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, CardContent, Container, Typography } from "@mui/material";
+import { Card, CardContent, Container, Input, Typography } from "@mui/material";
+import { colors } from "../themes/colors";
 
-const CardList: React.FC = () => {
+const PostList: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState<any[]>([]);
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
 
   useEffect(() => {
     axios
@@ -17,10 +23,50 @@ const CardList: React.FC = () => {
       });
   }, []);
 
+  useEffect(() => {
+    const filtered = data.filter((item) =>
+      item.meta.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredData(filtered);
+  }, [data, searchTerm]);
+
   return (
-    <Container>
-      {data.map((item, index) => (
-        <Card key={index} sx={{ maxWidth: "80%", marginBottom: "20px",mt:"20px" }}>
+    
+    <Container
+      sx={{
+        alignContent: "center",
+        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginTop: "20px",
+        marginBottom: "20px",
+        borderRadius: "10px",
+      }}
+    >    
+    
+    
+    <Input
+    sx={{ backgroundColor: colors.secondary, borderRadius: 1 
+    }}
+    placeholder="&#128269;"
+    type="text"
+    value={searchTerm}
+    onChange={handleSearchChange}
+  ></Input>
+
+
+      {filteredData.map((item, index) => (
+        <Card
+          key={index}
+          sx={{
+            maxWidth: "80%",
+            marginBottom: "5px",
+            minWidth: 900,
+            mt: "5px",
+            boxShadow: "none",
+          }}
+        >
           <CardContent>
             <Typography variant="h5" component="div">
               {item.meta.title}
@@ -44,4 +90,4 @@ const CardList: React.FC = () => {
   );
 };
 
-export default CardList;
+export default PostList;

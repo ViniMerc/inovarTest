@@ -4,8 +4,14 @@ import { colors } from "../themes/colors";
 export default function Search() {
   return (
     <Input
+      sx={{ backgroundColor: colors.secondary, borderRadius: 1 
+      }}
       placeholder="&#128269;"
-      sx={{ backgroundColor: colors.secondary, borderRadius: 1 }}
+      type="text"
+
     ></Input>
   );
 }
+
+
+

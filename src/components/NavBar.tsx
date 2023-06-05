@@ -14,7 +14,7 @@ export default function NavBar() {
   return (
     <AppBar
       sx={{
-        boxShadow: "none",
+        boxShadow: "0px 0.2px 0px 0px #000000",
         backgroundColor: "transparent",
         position: "static",
       }}
@@ -28,7 +28,7 @@ export default function NavBar() {
         }}
       >
         <Stack direction="row" spacing={2}>
-          <Hexagon size={24} color="orange" style={{ marginLeft: "300px" }} />
+          <Hexagon size={48} fill={colors.primary} color={colors.primary} style={{ marginLeft: "300px" }} />
           <Button
             sx={{
               backgroundColor: colors.tertiary,
