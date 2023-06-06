@@ -17,6 +17,7 @@ import { Colors } from "../themes/Colors";
 import OrangeTheme from "../themes/OrangeTheme";
 import Bottom from "./Bottom";
 import LoadMore from "./LoadMore";
+import Fonts from "../themes/Fonts";
 
 const PostList: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -26,7 +27,7 @@ const PostList: React.FC = () => {
     setSearchTerm(event.target.value);
   };
   const formatCreatedAt = (timestamp: number) => {
-    const date = new Date(timestamp * 1000); 
+    const date = new Date(timestamp * 1000);
     return date.toLocaleDateString();
   };
 
@@ -90,58 +91,64 @@ const PostList: React.FC = () => {
                 {item.upvotes}
               </Button>
             </ButtonGroup>
-          <ThemeProvider theme={OrangeTheme}>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              textTransform={"uppercase"}
-            >
-              {item.meta.url}
-            </Typography>
-            <Typography variant="h5" component="div" sx={{ mt: 0.4, mb: 0.4 }}>
-              {item.meta.title}
-            </Typography>
-            <Grid container direction="row" spacing={2}>
-              <Grid item xs={"auto"}>
+            <ThemeProvider theme={OrangeTheme}>
+              <ThemeProvider theme={Fonts}>
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  sx={{
-                    backgroundColor: "#09BAFB",
-                    borderRadius: 2,
-                    padding: "5px",
-                  }}
+                  textTransform={"uppercase"}
                 >
-                  {item.category}
+                  {item.meta.url}
                 </Typography>
-              </Grid>
-              <Grid item xs={"auto"}>
-                <Avatar
-                  variant="rounded"
-                  src="https://material-ui.com/static/images/avatar/1.jpg"
-                />
-              </Grid>
-              <Grid item xs={"auto"}>
-                <Typography color="text.secondary">
-                  <Link>{item.meta.author}</Link>
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{ mt: 0.4, mb: 0.4 }}
+                >
+                  {item.meta.title}
                 </Typography>
-              </Grid>
-              <Grid item xs={"auto"}>
-                <Typography color="text.secondary">
-                  {formatCreatedAt(item.created_at)} •
-                </Typography>
-              </Grid>
-              <Grid item xs={"auto"}>
-                <Typography variant="body2" color="text.secondary">
-                  <Link>{item.comments} Comments</Link>
-                </Typography>
-              </Grid>
-              <Grid item xs={"auto"}>
-                <Typography variant="body2" color="text.secondary">
-                  <Link>Edit </Link>
-                </Typography>
-              </Grid>
-            </Grid>
+                <Grid container direction="row" spacing={2}>
+                  <Grid item xs={"auto"}>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{
+                        backgroundColor: "#09BAFB",
+                        borderRadius: 2,
+                        padding: "5px",
+                      }}
+                    >
+                      {item.category}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={"auto"}>
+                    <Avatar
+                      variant="rounded"
+                      src="https://material-ui.com/static/images/avatar/1.jpg"
+                    />
+                  </Grid>
+                  <Grid item xs={"auto"}>
+                    <Typography color="text.secondary">
+                      <Link>{item.meta.author}</Link>
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={"auto"}>
+                    <Typography color="text.secondary">
+                      {formatCreatedAt(item.created_at)} •
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={"auto"}>
+                    <Typography variant="body2" color="text.secondary">
+                      <Link>{item.comments} Comments</Link>
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={"auto"}>
+                    <Typography variant="body2" color="text.secondary">
+                      <Link>Edit </Link>
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </ThemeProvider>
             </ThemeProvider>
           </CardContent>
         </Card>

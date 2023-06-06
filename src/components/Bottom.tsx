@@ -1,6 +1,14 @@
-import { AppBar, Stack, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Link,
+  Stack,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 
 import HexagonIcon from "./HexagonIcon";
+import OrangeTheme from "../themes/OrangeTheme";
 
 export default function Bottom() {
   return (
@@ -19,6 +27,7 @@ export default function Bottom() {
         sx={{
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
           flexDirection: "row",
         }}
       >
@@ -34,6 +43,12 @@ export default function Bottom() {
 
         <Stack direction="row" spacing={2}>
           <Typography color={"grey"}>Facebook</Typography>
+          <Typography color={"grey"}>Twitter</Typography>
+          <ThemeProvider theme={OrangeTheme}>
+            <Link >About</Link>
+            <Link >Contact</Link>
+            <Link >Sign in</Link>
+          </ThemeProvider>
         </Stack>
       </Toolbar>
     </AppBar>
