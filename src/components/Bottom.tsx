@@ -45,9 +45,9 @@ export default function Bottom() {
           <Typography color={"grey"}>Facebook</Typography>
           <Typography color={"grey"}>Twitter</Typography>
           <ThemeProvider theme={OrangeTheme}>
-            <Link >About</Link>
-            <Link >Contact</Link>
-            <Link >Sign in</Link>
+            <Link>About</Link>
+            <Link>Contact</Link>
+            <Link>Sign in</Link>
           </ThemeProvider>
         </Stack>
       </Toolbar>

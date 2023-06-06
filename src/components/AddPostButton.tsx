@@ -19,7 +19,6 @@ export default function AddPostButton() {
           color: Colors.tertiary,
         }}
       >
-        {" "}
         Add Post
       </Button>
     </ButtonGroup>

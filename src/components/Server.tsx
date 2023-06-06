@@ -17,7 +17,7 @@ import OrangeTheme from "../themes/OrangeTheme";
 import Bottom from "./Bottom";
 import LoadMore from "./LoadMore";
 import RandomAvatar from "../themes/RandomAvatar";
-import { getFormattedCategory } from "./Formats";
+import { FormattedCategory } from "./Formats";
 import { CategoryColors } from "../themes/CategoryColors";
 import { MessageCircle } from "react-feather";
 
@@ -74,7 +74,7 @@ const PostList: React.FC = () => {
       ></Input>
 
       {filteredData.length === 0 ? (
-        <Card sx={{mt:10,mb:10, fontSize:30}}>No results found</Card>
+        <Card sx={{ mt: 10, mb: 10, fontSize: 30 }}>No results found</Card>
       ) : (
         filteredData.map((item, index) => (
           <Card
@@ -128,7 +128,7 @@ const PostList: React.FC = () => {
                         padding: "5px",
                       }}
                     >
-                      {getFormattedCategory(item.category)}
+                      {FormattedCategory(item.category)}
                     </Typography>
                   </Grid>
                   <Grid item xs={"auto"}>

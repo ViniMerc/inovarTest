@@ -1,4 +1,4 @@
-export const getFormattedCategory = (category: string) => {
+export const FormattedCategory = (category: string) => {
     switch (category) {
       case 'ux_ui':
         return 'UX Theory';
