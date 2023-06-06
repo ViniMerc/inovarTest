@@ -12,9 +12,6 @@ Install the necessary libraries
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
 ## You can take a look at the project in the following link:
 
 Open [https://inovar-test.vercel.app/](https://inovar-test.vercel.app/) to view it in the browser.
