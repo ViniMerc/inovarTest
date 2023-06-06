@@ -8,8 +8,6 @@ export default function AddPostButton() {
         sx={{
           backgroundColor: Colors.primary,
           color: Colors.tertiary,
-          
-
         }}
       >
         +
@@ -17,7 +15,7 @@ export default function AddPostButton() {
       <Button
         sx={{
           backgroundColor: Colors.primary,
-        
+
           color: Colors.tertiary,
         }}
       >

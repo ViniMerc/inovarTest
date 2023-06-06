@@ -3,16 +3,11 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import { Colors } from "../themes/Colors";
+import { AlignJustify } from "react-feather";
 
 export default function FilterButton() {
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
-
   return (
     <Box
       sx={{
@@ -21,8 +16,8 @@ export default function FilterButton() {
       }}
     >
       <FormControl fullWidth>
-        <InputLabel></InputLabel>
-        <Select id="demo-simple-select" value={age} onChange={handleChange}>
+        <InputLabel placeholder="Filter"></InputLabel>
+        <Select IconComponent={AlignJustify}>
           <MenuItem value={10}>Popularity</MenuItem>
           <MenuItem value={20}>Date</MenuItem>
           <MenuItem value={30}>Comments</MenuItem>
