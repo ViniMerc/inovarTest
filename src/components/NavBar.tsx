@@ -1,6 +1,5 @@
 import { AppBar, Avatar, Container, Stack, Toolbar } from "@mui/material";
 
-import Search from "./Search";
 import FilterButton from "./FilterButton";
 import AddPostButton from "./AddPostButton";
 import HexagonIcon from "./HexagonIcon";
@@ -27,7 +26,6 @@ export default function NavBar() {
         <Stack direction="row" spacing={2}>
           <HexagonIcon />
           <FilterButton />
-          <Search />
         </Stack>
         <Stack direction="row" spacing={2}>
           <AddPostButton />
