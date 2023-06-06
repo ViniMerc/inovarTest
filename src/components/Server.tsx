@@ -19,6 +19,8 @@ import LoadMore from "./LoadMore";
 import RandomAvatar from "../themes/RandomAvatar";
 import { getFormattedCategory } from "./Formats";
 import { CategoryColors } from "../themes/CategoryColors";
+import { MessageCircle } from "react-feather";
+
 
 const PostList: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -132,9 +134,9 @@ const PostList: React.FC = () => {
                     {formatCreatedAt(item.created_at)} •
                   </Typography>
                 </Grid>
-                <Grid item xs={"auto"}>
+                <Grid item xs={"auto"} alignItems={"center"}>
                   <Typography variant="body2" color="text.secondary">
-                    <Link>{item.comments} Comments</Link>
+                    <Link><MessageCircle></MessageCircle>{item.comments} Comments</Link>
                   </Typography>
                 </Grid>
                 <Grid item xs={"auto"}>
