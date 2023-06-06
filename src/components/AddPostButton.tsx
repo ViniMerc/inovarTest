@@ -1,13 +1,13 @@
 import { Button, ButtonGroup } from "@mui/material";
-import { colors } from "../themes/colors";
+import { Colors } from "../themes/Colors";
 
 export default function AddPostButton() {
   return (
     <ButtonGroup variant="contained">
       <Button
         sx={{
-          backgroundColor: colors.primary,
-          color: colors.tertiary,
+          backgroundColor: Colors.primary,
+          color: Colors.tertiary,
           
 
         }}
@@ -16,9 +16,9 @@ export default function AddPostButton() {
       </Button>
       <Button
         sx={{
-          backgroundColor: colors.primary,
+          backgroundColor: Colors.primary,
         
-          color: colors.tertiary,
+          color: Colors.tertiary,
         }}
       >
         {" "}

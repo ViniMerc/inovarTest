@@ -10,9 +10,11 @@ import {
   Grid,
   Input,
   Link,
+  ThemeProvider,
   Typography,
 } from "@mui/material";
-import { colors } from "../themes/colors";
+import { Colors } from "../themes/Colors";
+import OrangeTheme from "../themes/OrangeTheme";
 
 const PostList: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -59,7 +61,7 @@ const PostList: React.FC = () => {
       }}
     >
       <Input
-        sx={{ backgroundColor: colors.secondary, borderRadius: 1 }}
+        sx={{ backgroundColor: Colors.secondary, borderRadius: 1 }}
         placeholder="&#128269;"
         type="text"
         value={searchTerm}
@@ -80,13 +82,13 @@ const PostList: React.FC = () => {
           <CardContent>
             <ButtonGroup variant="contained">
               <Button
-                sx={{ backgroundColor: colors.primary, color: colors.tertiary }}
+                sx={{ backgroundColor: Colors.primary, color: Colors.tertiary }}
               >
                 {" "}
                 {item.upvotes}
               </Button>
             </ButtonGroup>
-
+          <ThemeProvider theme={OrangeTheme}>
             <Typography
               variant="body2"
               color="text.secondary"
@@ -138,6 +140,7 @@ const PostList: React.FC = () => {
                 </Typography>
               </Grid>
             </Grid>
+            </ThemeProvider>
           </CardContent>
         </Card>
       ))}

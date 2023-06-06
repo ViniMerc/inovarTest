@@ -1,10 +1,10 @@
 import { Input } from "@mui/material";
-import { colors } from "../themes/colors";
+import { Colors } from "../themes/Colors";
 
 export default function Search() {
   return (
     <Input
-      sx={{ backgroundColor: colors.secondary, borderRadius: 1, width: 300,
+      sx={{ backgroundColor: Colors.secondary, borderRadius: 1, width: 300,
       
       }}
       placeholder="&#128269;"

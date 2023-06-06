@@ -4,7 +4,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { colors } from "../themes/colors";
+import { Colors } from "../themes/Colors";
 
 export default function FilterButton() {
   const [age, setAge] = React.useState("");
@@ -16,7 +16,7 @@ export default function FilterButton() {
   return (
     <Box
       sx={{
-        backgroundColor: colors.tertiary,
+        backgroundColor: Colors.tertiary,
         color: "#545454",
       }}
     >
