@@ -1,9 +1,9 @@
 import { AppBar, Avatar, Container, Stack, Toolbar } from "@mui/material";
-import { Hexagon } from "react-feather";
-import { Colors } from "../themes/Colors";
+
 import Search from "./Search";
 import FilterButton from "./FilterButton";
 import AddPostButton from "./AddPostButton";
+import HexagonIcon from "./HexagonIcon";
 
 export default function NavBar() {
   return (
@@ -25,12 +25,7 @@ export default function NavBar() {
         }}
       >
         <Stack direction="row" spacing={2}>
-          <Hexagon
-            size={48}
-            fill={Colors.primary}
-            color={Colors.primary}
-            style={{ marginLeft: "300px" }}
-          />
+          <HexagonIcon />
           <FilterButton />
           <Search />
         </Stack>

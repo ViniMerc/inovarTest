@@ -1,11 +1,12 @@
 import { Button } from "@mui/material";
 import { Colors } from "../themes/Colors";
+import { Loader } from "react-feather";
 
 export default function LoadMore () {
   return (
 <Button  
 sx={{
-    width: "100%",
+    width: "80%",
     height: "50px",
     borderRadius: "0px",
     backgroundColor: Colors.quaternary,
@@ -19,8 +20,8 @@ sx={{
     boxShadow: "0px 0.2px 0px 0px #000000",
     }}
     variant="contained"
-    >
-Load more    </Button>
+    ><Loader></Loader>
+ Load more    </Button>
 
   )
 } 

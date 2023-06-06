@@ -1,54 +1,41 @@
-import { Paper, Container, Typography, Box, Link } from "@mui/material";
+import { AppBar, Stack, Toolbar, Typography } from "@mui/material";
+
+import HexagonIcon from "./HexagonIcon";
 
 export default function Bottom() {
   return (
-    <Paper
+    <AppBar
       sx={{
-        marginTop: "5px",
-        width: "100%",
-        position: "relative",
-        bottom: 0,
+        height: 40,
+        mt: 2,
+        mb: 4,
+        boxShadow: "none",
         backgroundColor: "transparent",
+        position: "static",
+        maxWidth: "80%",
       }}
-      component="footer"
-      square
-      variant="outlined"
     >
-      <Container maxWidth="lg">
-        <Box
-          sx={{
-            flexGrow: 1,
-            justifyContent: "center",
-            display: "flex",
-            my: 1,
-          }}
-        ></Box>
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "row",
+        }}
+      >
+        <Stack direction="row" spacing={2}>
+          <HexagonIcon />
+          <Stack direction="column" spacing={2}>
+            <Typography color={"black"}>The Ux Library</Typography>
+            <Typography color={"grey"}>
+              Community curated design content & discussion
+            </Typography>
+          </Stack>
+        </Stack>
 
-        <Box
-          sx={{
-            flexGrow: 1,
-            justifyContent: "center",
-            display: "flex",
-            mb: 2,
-          }}
-        >
-          <Typography variant="caption" color="initial">
-           Footer
-          </Typography>
-        </Box>
-
-        <Box
-          sx={{
-            flexGrow: 1,
-            justifyContent: "center",
-            display: "flex",
-            mb: 2,
-          }}
-        >
-          <Link sx={{ fontSize: "12px" }}>Footer</Link>|{" "}
-          <Link sx={{ fontSize: "12px" }}>Footer</Link>
-        </Box>
-      </Container>
-    </Paper>
+        <Stack direction="row" spacing={2}>
+          <Typography color={"grey"}>Facebook</Typography>
+        </Stack>
+      </Toolbar>
+    </AppBar>
   );
 }
