@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
-  Avatar,
   Button,
   ButtonGroup,
   Card,
@@ -18,6 +17,8 @@ import OrangeTheme from "../themes/OrangeTheme";
 import Bottom from "./Bottom";
 import LoadMore from "./LoadMore";
 import RandomAvatar from "../themes/RandomAvatar";
+import { getFormattedCategory } from "./Formats";
+import { CategoryColors } from "../themes/CategoryColors";
 
 const PostList: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -110,12 +111,12 @@ const PostList: React.FC = () => {
                     variant="body2"
                     color="text.secondary"
                     sx={{
-                      backgroundColor: "#09BAFB",
+                      backgroundColor: CategoryColors(item.category),
                       borderRadius: 2,
                       padding: "5px",
                     }}
                   >
-                    {item.category}
+                    {getFormattedCategory(item.category)}
                   </Typography>
                 </Grid>
                 <Grid item xs={"auto"}>
