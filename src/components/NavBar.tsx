@@ -1,10 +1,4 @@
-import {
-  AppBar,
-  Avatar,
-  Container,
-  Stack,
-  Toolbar,
-} from "@mui/material";
+import { AppBar, Avatar, Container, Stack, Toolbar } from "@mui/material";
 import { Hexagon } from "react-feather";
 import { Colors } from "../themes/Colors";
 import Search from "./Search";
@@ -37,13 +31,11 @@ export default function NavBar() {
             color={Colors.primary}
             style={{ marginLeft: "300px" }}
           />
-
           <FilterButton />
-
           <Search />
         </Stack>
         <Stack direction="row" spacing={2}>
-        <AddPostButton/>
+          <AddPostButton />
           <Stack direction="row" spacing={2}>
             <Container sx={{ marginRight: "300px" }}>
               <Avatar

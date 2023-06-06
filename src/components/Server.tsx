@@ -15,6 +15,8 @@ import {
 } from "@mui/material";
 import { Colors } from "../themes/Colors";
 import OrangeTheme from "../themes/OrangeTheme";
+import Bottom from "./Bottom";
+import LoadMore from "./LoadMore";
 
 const PostList: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
@@ -24,8 +26,8 @@ const PostList: React.FC = () => {
     setSearchTerm(event.target.value);
   };
   const formatCreatedAt = (timestamp: number) => {
-    const date = new Date(timestamp * 1000); // Multiplica por 1000 para converter para milissegundos
-    return date.toLocaleDateString(); // Formata a data para uma string legível
+    const date = new Date(timestamp * 1000); 
+    return date.toLocaleDateString();
   };
 
   useEffect(() => {
@@ -36,7 +38,7 @@ const PostList: React.FC = () => {
         console.log(response.data.links);
       })
       .catch((error) => {
-        console.error("Erro ao obter os dados da API:", error);
+        console.error("Error getting API data:", error);
       });
   }, []);
 
@@ -144,6 +146,8 @@ const PostList: React.FC = () => {
           </CardContent>
         </Card>
       ))}
+      <LoadMore></LoadMore>
+      <Bottom></Bottom>
     </Container>
   );
 };

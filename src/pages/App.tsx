@@ -8,8 +8,9 @@ function App() {
       <CssBaseline />
       <NavBar />
       <PostList />
+  
     </Grid>
   );
 }
 
-export default App;
+export default App; 
